@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+   <link rel="stylesheet" href="Adrielnstp.css">
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #080F1E;
+    --bg-light: #0D1930;
+    --card: #111F38;
+    --blue: #2563EB;
+    --cyan: #00E5FF;
+    --white: #F8FAFC;
+    --gray: #94A3B8;
+    --border: rgba(0, 229, 255, 0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 15, 30, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.A2 {
+    max-width: 1200px;
+    margin: auto;
+    padding: 22px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main {
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.main span {
+    color: var(--cyan);
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+
+
+.A3 {
+    max-width: 1200px;
+    min-height: 650px;
+    margin: auto;
+    padding: 100px 45px;
+
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+        "label photo"
+        "name photo"
+        "person photo"
+        "intro photo";
+
+    align-items: center;
+    column-gap: 60px;
+}
+
+#A4 {
+    grid-area: label;
+    color: var(--cyan);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#waw {
+    grid-area: name;
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+#waw span {
+    color: var(--cyan);
+    display: block;
+    text-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+}
+
+.A6 {
+    grid-area: photo;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    justify-self: center;
+
+    border-radius: 100px 200px 150px 250px;
+    border: 2px solid var(--cyan);
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.2),
+        0 0 70px rgba(37, 99, 235, 0.15);
+
+    transition: 0.4s;
+}
+
+.A6:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.35);
+}
+
+.person {
+    grid-area: person;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 25px;
+}
+
+.person p {
+    color: var(--gray);
+    font-size: 15px;
+    border-left: 3px solid var(--cyan);
+    padding: 8px 15px;
+    background: rgba(17, 31, 56, 0.7);
+    border-radius: 0 8px 8px 0;
+}
+
+.person b {
+    color: var(--white);
+    margin-left: 5px;
+}
+
+.A5 {
+    grid-area: intro;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 550px;
+}
+
+
+.A3 br {
+    display: none;
+}
+
+
+
+.A7 {
+    padding: 100px 35px;
+    background: var(--bg-light);
+}
+
+.A8 {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.A9, .A10 {
+    background: var(--card);
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.A9:hover, .A10:hover {
+    transform: translateY(-7px);
+    border-color: var(--cyan);
+}
+
+.A9 h2, .A10 h2 {
+    color: var(--cyan);
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.A9 p, .A10 p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+
+.A11 {
+    padding: 100px 35px;
+}
+
+.A12 {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.A13 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.A13 h2 {
+    font-size: 35px;
+}
+
+.A13 b {
+    color: var(--cyan);
+}
+
+.MC {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.MD, .Md {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.MD::before, .Md::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+
+.MD:hover, .Md:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+}
+
+.mod-num {
+    color: var(--cyan);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.MD h3, .Md h3 {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.MD a, .Md a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 17px;
+    border: 1px solid var(--cyan);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.MD a:hover, .Md a:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+
+
+.A14 {
+    padding: 100px 35px;
+    background: var(--bg-light);
+}
+
+.REF {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.REF > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 32px;
+    color: var(--cyan);
+    margin-bottom: 30px;
+}
+
+.MD1 {
+    background: var(--card);
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.MD1:hover {
+    border-color: var(--cyan);
+    transform: translateY(-5px);
+}
+
+.MD1 h3 {
+    font-size: 17px;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.MD1 p {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+
+
+.A20 {
+    background: #050A14;
+    border-top: 1px solid var(--border);
+    padding: 30px 35px;
+}
+
+.A30 {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.A30 span {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.A40 {
+    display: flex;
+    gap: 25px;
+}
+
+.A40 a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.A40 a:hover {
+    color: var(--cyan);
+}
+
+
+
+@media (max-width: 768px) {
+
+    .A2 {
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .A3 {
+        padding: 65px 25px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "photo"
+            "label"
+            "name"
+            "person"
+            "intro";
+        text-align: center;
+        gap: 20px;
+    }
+
+    .A6 {
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    #waw {
+        font-size: 38px;
+    }
+
+    .person {
+        text-align: left;
+    }
+
+    .A5 {
+        margin: auto;
+    }
+
+    .A8 {
+        grid-template-columns: 1fr;
+    }
+
+    .MC {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .REF {
+        grid-template-columns: 1fr;
+    }
+
+    .REF > h2 {
+        grid-column: auto;
+    }
+
+    .A30 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .MC {
+        grid-template-columns: 1fr;
+    }
+
+    .A13 h2 {
+        font-size: 27px;
+    }
+
+    .A9, .A10 {
+        padding: 25px;
+    }
+
+    .A40 {
+        gap: 18px;
+    }
+
+    #waw {
+        font-size: 32px;
+    }
+
+}
+   </style>
+</head>
+<body>
+    <header>
+        <div class="A2">
+            <a class="main" href="#Home"><small>My</small> <span>NSTP </span>Portfolio</a>
+            
+            <nav>
+                <a href="#B1">Home</a>
+                <a href="#B2">About ME</a>
+                <a href="#B3">Modules</a>
+                <a href="#B4">Reflection</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="A3" id="B1">
+            <p id="A4">NSTP Portfolio</p>
+
+            <img src="Adriel4.jpeg" alt="Picture nako ni Maam:)" class="A6">
+
+            <h1 id="waw">Hi, I'm <span> Galera Adriel Jhon</span></h1>
+
+            <div class="person">
+            <p>Course:<b> BS Information Technology</b></p>
+            <p>Year:<b> 1st Year </b></p>
+            <p>Section: <b>BSIT-1B</b></p>
+            <p>Age:<b> 18 Years old</b></p>
+            <p>Status:<b> Student</b></p>
+            
+            </div>
+            <br>
+            <p class="A5">I am a Student who believes that Nothing
+            is Impossible when you try to Explore It.</p>
+            
+        </section>
+
+        <section class="A7" id="B2">
+            <div class="A8">
+                <div class="A9">
+                    <h2><small>About</small> Me</h2>
+
+                <p>
+            Hello! I’m <strong>Adriel</strong>. I’m a
+            <strong>student who want to be a Software Developer or Web Developer</strong>
+            <strong></strong>.
+
+            <p>
+            This portfolio brings together my work, ideas, and learning from
+            each module. I enjoy building new skills and finding practical ways
+            to use what I learn.
+          </p>
+                
+                </div>
+
+                <div class="A10">
+
+                   <h2>About in NSTP <small>(National Service Training Program)</small></h2>
+ 
+                   <p>Through the <b>National Service Training Program(NSTP)</b>,
+            I want to develop My Leadership Skills, Social Awareness,
+            Deeecipline, and Sense of Responsibility.
+            Because I believe that even a small acts of Kindness
+            can create meaningful changes in Society.
+            </p>
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="A11" id="B3">
+
+            <div class="A12">
+                <div class="A13">
+                    <h2>NSTP - <b>CWTS (Civic Welfare Training Service)</b> Modules</h2>
+                </div>
+
+                <div class="MC">
+
+            <div class="MD">
+                <div class="mod-num">01</div>
+                <h3>Module 1</h3>
+                <p></p>
+                <a href="Module 1 Introduction to NSTP-20261112.zip">
+                    Click to open</a>
+            </div>
+        
+            <div class="MD">
+                <div class="mod-num">02</div>
+                <h3>Module 2</h3>
+                <p></p>
+                <a href="Module 2 Nationalism amp Citizenship Training-20261112.zip">
+                     Click to open</a>
+            </div>
+
+            <div class="MD">
+                <div class="mod-num">03</div>
+                <h3>Module 3</h3>
+                <p></p>
+                <a href="Module 3 Drug and Substance Abuse Prevention and Control-20261112.zip">
+                     Click to open</a>
+            </div>
+
+            <div class="MD">
+                <div class="mod-num">04</div>
+                <h3>Module 4</h3>
+                <p></p>
+                <a href="Module 4 Disaster Awareness and Preparedness Management-20261112.zip"> 
+                    Click to open</a>
+            </div>
+
+            <div class="MD">
+                <div class="mod-num">05</div>
+                <h3>Module 5</h3>
+                <p></p>
+                <a href="Module 5 Environmental Awareness and Protection-20261112.zip">
+                    Click to open</a>
+            </div>
+
+            <div class="MD">
+                <div class="mod-num">06</div>
+                <h3>Module 6</h3>
+                <p></p>
+                <a href="MODULE 6 - National Security.pdf">
+                    Click to open</a>
+            </div>
+
+            <div class="Md">
+                <div class="mod-num">07</div>
+                <h3>Module 7</h3>
+                <p></p>
+                <a href="Module 7 Volunteerism (GROUP 1)-20261112.zip">
+                    Click to open</a>
+            </div>
+
+            <div class="MD">
+                <div class="mod-num">08</div>
+                <h3>Module 8</h3>
+                <p></p>
+                <a href="Module 8 Peace Education (Group 2)-20261112.zip">
+                    Click to open</a>
+            </div>
+
+            <div class="MD">
+                <div class="mod-num">09</div>
+                <h3>Module 9</h3>
+                <p></p>
+                <a href="Module 9 Gender and Development (Group 3)-20261112.zip">
+                    Click to open</a>
+            </div>
+
+            <div class="Md">
+                <div class="mod-num">10</div>
+                <h3>Module 10</h3>
+                <p></p>
+                <a href="Module 10 Introduction to Community Based Engagement (Group 4)-20261112.zip">
+                    Click to open</a>
+            </div>
+            
+        
+            </div>
+        </section>
+        <section class="A14" id="B4">
+           <div class="REF">
+            <h2>My Reflection in Every Modules</h2>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 1</h3>
+             <p>
+                After studying this module, I realized that building our nation is not only the responsibility of the government 
+                but also of every citizen, including students like me. Through NSTP, I learned the importance of discipline, teamwork,
+                leadership, respect, and helping others.
+                As a student, I can contribute to our country through simple actions 
+                like following rules, respecting other people, keeping our surroundings clean, and helping those who are 
+                in need. Hindi naman kailangan na gumawa agad ng malaking bagay para makatulong. Even small actions can make a
+                difference if we do them with responsibility and sincerity.
+                For me, NSTP is not just a subject that we need to pass, but also an opportunity to learn how to become a better
+                and more responsible citizen. I may still be a student, but I believe that I can contribute to our nation in my own simple ways.
+                It starts with myself and how I treat and help other people.</p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 2</h3>
+             <p>
+                After studying Module 2, mas naintindihan ko ang importance ng pagiging isang mabuting Filipino citizen.
+                Natutunan ko na hindi lang puro rights ang dapat nating malaman, kailangan din nating gawin ang ating responsibilities.
+                We should respect other people's rights, follow rules, and be responsible sa ating mga actions.
+                Natutunan ko rin ang importance ng good citizenship, leadership, and nationalism. As a student,
+                I can practice these values by being honest, respectful, disciplined, and willing to help others. 
+                Na-realize ko rin na ang pagiging good leader ay hindi kailangan na ikaw ang laging nasusunod.
+                A good leader is someone who listens, understands, and helps other people.
+                Another thing I learned is the importance of voting. As a future voter,
+                dapat marunong akong pumili ng tamang leader based on their honesty, abilities, and plans for our country. 
+                Hindi dapat basta sumunod dahil lang sikat ang isang candidate.
+                Overall, this module taught me na ang pagiging mabuting Filipino ay nagsisimula sa simpleng bagay. 
+                Kahit student pa lang ako, I can already show my love for our country by doing what is right, respecting others, 
+                and being responsible. Hindi man malaki ang kaya kong gawin ngayon, I believe that small actions can still make a difference.
+             </p>
+             
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 3</h3>
+             <p>
+                mas naintindihan ko kung gaano kaimportante na umiwas sa illegal drugs and other harmful substances. 
+                Natutunan ko na ang paggamit nito ay hindi lang nakakasama sa health ng isang tao, kundi pati na rin sa kanyang family, 
+                studies, and future. I also learned that some people are influenced by curiosity, peer pressure, and personal problems, 
+                kaya importanteng marunong tayong tumanggi sa mga bagay na alam nating makakasama sa atin.
+                I also learned about Republic Act No. 9165 or the Comprehensive Dangerous Drugs Act of 2002. 
+                This law helps protect people from illegal drugs and promotes prevention, education, and rehabilitation. 
+                As a student, I can help by spreading awareness, choosing good friends, focusing on my studies, and avoiding bad influences.
+                Overall, this module taught me na mas mabuting piliin ang healthy lifestyle kaysa gumawa ng decisions 
+                na maaaring makasira sa future ko. I believe that staying drug-free is one way of showing responsibility not only to 
+                myself but also to my family and community.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 4</h3>
+             <p>
+                After studying Module 4, I realized how important it is to be prepared for disasters. 
+                Natutunan ko na disasters can happen anytime and anywhere, kaya dapat laging handa tayo. 
+                I learned about different types of disasters like earthquakes, floods, typhoons, and fires, 
+                and how to respond to them properly. I also learned about the importance of having an emergency plan, 
+                knowing evacuation routes, and having emergency kits ready.
+                As a student, I can help by being aware of the risks in my area, participating in drills, 
+                and sharing what I learned with my family and friends. I also realized that helping others during disasters is very important. 
+                Even small actions like checking on neighbors or sharing information can make a big difference.
+                Overall, this module taught me that being prepared and responsible during disasters is not just about protecting myself, 
+                but also about helping others and contributing to the safety of my community.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 5</h3>
+             <p>
+                After studying Module 5, I realized how important it is to take care of our environment. 
+                Natutunan ko na ang kalikasan ay mahalaga sa ating buhay, kaya dapat natin itong protektahan at alagaan. 
+                I learned about different environmental issues like pollution, deforestation, and climate change, 
+                and how they affect not only nature but also our health and future.
+                As a student, I can help by practicing eco-friendly habits like reducing waste, recycling, saving energy, 
+                and planting trees. I also realized that spreading awareness about environmental protection is important. 
+                Even small actions like participating in clean-up drives or educating others can make a difference.
+                Overall, this module taught me that taking care of the environment is a responsibility that we all share. 
+                By being responsible and making conscious choices, we can contribute to a healthier and more sustainable world for ourselves and future generations.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 6</h3>
+             <p>
+                After studying Module 6, I learned about the importance of maintaining good mental health and well-being. 
+                Natutunan ko na ang isip at puso ay hindi lamang importante sa ating buhay, kaya dapat natin itong alayin at protektahan. 
+                I learned about different aspects of mental health like stress management, emotional regulation, and seeking help when needed. 
+                As a student, I can help by practicing self-care, supporting my peers, and creating a positive and inclusive environment. 
+                I also realized that taking care of my mental health is not a sign of weakness but a sign of strength and responsibility.
+                Overall, this module taught me that mental health is an essential part of our overall well-being and should be given the attention it deserves.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 7</h3>
+             <p>
+                After studying Module 7, I learned about the importance of building a healthy and inclusive community. 
+                Natutunan ko na ang isang malusog na komunidad ay nagsasama ng lahat ng mga tao, anuman ang kanilang origin, relihiyon, o kalagayan. 
+                I learned about the value of diversity and the need to promote equality and respect for all individuals. 
+                As a student, I can help by being a good citizen, treating others with kindness and respect, and working together to create a positive environment for everyone. 
+                I also realized that building a strong community requires active participation and commitment from all members.
+                Overall, this module taught me that a healthy community is built on mutual respect, understanding, and cooperation.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 8</h3>
+             <p>
+                After studying Module 8, I learned about the importance of civic responsibility and active citizenship. 
+                Natutunan ko na ang pagiging isang mabuting mamamayan ay nangangailangan ng pagkakaroon ng komitment sa lipunan at pagtulong sa iba. 
+                I learned about the role of citizens in promoting social justice, participating in democratic processes, and contributing to the development of their communities. 
+                As a student, I can help by staying informed about current events, engaging in community service, and advocating for positive change. 
+                I also realized that being a responsible citizen involves not only fulfilling one's duties but also exercising one's rights and freedoms in a constructive manner.
+                Overall, this module taught me that civic engagement is essential for building a more just and equitable society.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 9</h3>
+             <p>
+                After studying Module 9, I learned about the importance of environmental sustainability and conservation. 
+                Natutunan ko na ang ating kalikasan ay isang mahalagang resource na dapat nating protektahan para sa mga susunod na henerasyon. 
+                I learned about the impact of human activities on the environment and the need for responsible consumption and waste management. 
+                As a student, I can help by practicing eco-friendly habits, raising awareness about environmental issues, and participating in conservation efforts. 
+                I also realized that protecting the environment is not just the responsibility of individuals but also of governments and organizations.
+                Overall, this module taught me that environmental stewardship is crucial for ensuring a sustainable future for all.
+             </p>
+            </div>
+
+            <div class="MD1">
+             <h3>My Reflection in Module 10</h3>
+             <p>
+                After studying Module 10, I learned about the importance of personal development and self-awareness. 
+                Natutunan ko na ang pag-unlad ng isang tao ay nangangailangan ng pagkakaroon ng malaking pag-unawa sa sarili at ang mga bagay na nakakaapekto sa kanyang buhay. 
+                I learned about the significance of setting goals, managing time effectively, and maintaining a positive mindset. 
+                As a student, I can help by continuously working on myself, seeking feedback, and embracing opportunities for growth. 
+                I also realized that personal development is an ongoing process that requires commitment and dedication.
+                Overall, this module taught me that investing in oneself is fundamental to achieving success and fulfillment in life.
+             </p>
+            </div>
+
+        </div>
+
+        </section>
+    </main>
+
+    <Footer class="A20">
+        <div class="A30">
+            <span>2026 Adriel Galera * My NSTP Portfolio</span>
+            <div class="A40">
+                <a href="#B1">Home</a>
+                <a href="mailto:galeraadrieljhon@gmail.com">Email</a>
+                <a href="https://www.facebook.com/galeraadrieljhon">Facebook</a>
+            </div>
+
+        </div>
+    </Footer>
+</body>
+</html>
